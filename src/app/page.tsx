@@ -1,6 +1,5 @@
 import FormWizard from '@/components/FormWizard';
 import { Shield, TrendingUp } from 'lucide-react';
-import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -26,7 +25,7 @@ export default function Home() {
       <header className="relative z-10 pt-6 pb-4 px-6">
         <div className="max-w-4xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <Image
+            <img
               src="/finder-logo.png"
               alt="Finder"
               width={48}
