@@ -1,26 +1,67 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --finder-blue: #1E3A5F;
+  --finder-blue-dark: #152A45;
+  --finder-blue-light: #2A4A73;
+  --finder-yellow: #FFD700;
+  --finder-yellow-light: #FFE44D;
+  --finder-yellow-muted: #FFF4B3;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Custom scrollbar styles */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 8px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: rgba(30, 58, 95, 0.3);
+  border-radius: 4px;
 }
 
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(255, 215, 0, 0.4);
+  border-radius: 4px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 215, 0, 0.6);
+}
+
+/* Date input styling for dark mode */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.8) sepia(1) saturate(5) hue-rotate(180deg);
+  cursor: pointer;
+}
+
+/* Focus visible styles */
+*:focus-visible {
+  outline: 2px solid rgba(255, 215, 0, 0.6);
+  outline-offset: 2px;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection color */
+::selection {
+  background: rgba(255, 215, 0, 0.3);
+  color: #1E3A5F;
+}
+
+/* Font smoothing */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Finder gradient backgrounds */
+.finder-gradient {
+  background: linear-gradient(135deg, var(--finder-blue-dark) 0%, var(--finder-blue) 50%, var(--finder-blue-light) 100%);
+}
+
+.finder-card {
+  background: linear-gradient(180deg, var(--finder-yellow) 0%, var(--finder-yellow-light) 100%);
 }
